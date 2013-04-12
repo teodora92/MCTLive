@@ -41,7 +41,7 @@ function loadQuestions() {
 	var frage1 = new Frage("1", "1", "The correct answer is 2 long text long textlong textlong textlong tlongong textlong textlong textlong textlong text", "11", "none", "I told you it was 2");
 	var frage2 = new Frage("2", "1", "The correct answer is 1 and 3", "11", "none", "I told you it was 1");
 	var frage3 = new Frage("3", "1", "The correct answer is 3", "11", "none", "I told you it was 3");
-	var frage4 = new Frage("4", "1", "The correct answer is \"Teo\" 4", "11", "none", "I told you it was \"Teo\"");
+	var frage4 = new Frage("4", "1", "The correct answer is \"Teo\"", "11", "none", "I told you it was \"Teo\"");
 	
 	var fragen = new Array(frage1, frage2, frage3, frage4);
 
@@ -144,7 +144,7 @@ function displayResults() {
 
 	$('#content').empty();
 	
-	$('#content').append('<ul id="resultsList"></ul>');
+	$('#content').append('<ol id="resultsList"></ol>');
 	
 	var ind;
 	
@@ -181,12 +181,12 @@ function displayResults() {
 		// display result of the question based on "correct" variable
 		if (correct == true) {
 		
-			$('#resultsList').append('<li id="frageID_'+frage.frage_id+'"><a href="#">'+frage.text+'<img class="tickImage" src="res/images/checkIcon.png"></a></li>');
+			$('#resultsList').append('<li id="frageID_'+frage.frage_id+'"><a href="#">'+ (ind+1) + '. ' + frage.text+'<img class="tickImage" src="res/images/checkIcon.png"></a></li>');
 		
 		}
 		
 		else {
-			$('#resultsList').append('<li id="frageID_'+frage.frage_id+'"><a href="#">'+frage.text+'<img class="xImage" src="res/images/xIcon.png"></a></li>');
+			$('#resultsList').append('<li id="frageID_'+frage.frage_id+'"><a href="#">' + (ind+1) + '. ' + frage.text+'<img class="xImage" src="res/images/xIcon.png"></a></li>');
 		}
 	
 		
